@@ -8,9 +8,6 @@ import org.testng.annotations.AfterSuite
 import org.testng.annotations.BeforeSuite
 import java.time.Duration
 
-/**
- * Base class for all E2E tests. Manages a single driver instance per suite.
- */
 abstract class BaseE2ETest {
 
     companion object {

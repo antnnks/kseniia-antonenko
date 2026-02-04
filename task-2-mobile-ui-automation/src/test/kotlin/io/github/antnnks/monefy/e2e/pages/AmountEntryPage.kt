@@ -13,7 +13,6 @@ class AmountEntryPage(private val driver: AndroidDriver, private val wait: WebDr
         private val firstCategoryItem = By.xpath("//android.widget.GridView//android.widget.TextView")
     }
 
-    /** Wait for amount screen (keyboard/confirm) to be ready. */
     fun waitForAmountScreen() {
         wait.until(ExpectedConditions.elementToBeClickable(confirmButton))
     }
@@ -37,7 +36,6 @@ class AmountEntryPage(private val driver: AndroidDriver, private val wait: WebDr
         wait.until(ExpectedConditions.elementToBeClickable(firstCategoryItem)).click()
     }
 
-    /** Select second category in the grid (for different category in wheel test). */
     fun selectSecondCategory(): Boolean {
         return try {
             val categories = driver.findElements(firstCategoryItem)

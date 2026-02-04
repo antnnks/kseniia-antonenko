@@ -3,10 +3,6 @@ package com.monefy.io.github.antnnks.monefy.e2e.config
 import java.net.URI
 import java.net.URL
 
-/**
- * Central configuration for Appium and Monefy app under test.
- * Override via environment variables or system properties if needed.
- */
 object AppiumConfig {
     const val APP_PACKAGE = "com.monefy.app.lite"
     const val MAIN_ACTIVITY = "com.monefy.app.MainActivity"
