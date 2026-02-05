@@ -1,5 +1,6 @@
 package io.github.antnnks.monefy.e2e.pages
 
+import io.appium.java_client.AppiumBy
 import io.appium.java_client.android.AndroidDriver
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.ExpectedConditions
@@ -10,11 +11,22 @@ class AmountEntryPage(private val driver: AndroidDriver, private val wait: WebDr
     companion object {
         private const val PACKAGE = "com.monefy.app.lite"
         private val confirmButton = By.id("$PACKAGE:id/keyboard_action_button")
+        private val anyDigitButton = By.id("$PACKAGE:id/buttonKeyboard1")
+        private val anyDigitButtonByRegex =
+            AppiumBy.androidUIAutomator("new UiSelector().resourceIdMatches(\".*:id/buttonKeyboard\\\\d\")")
         private val firstCategoryItem = By.xpath("//android.widget.GridView//android.widget.TextView")
     }
 
     fun waitForAmountScreen() {
-        wait.until(ExpectedConditions.elementToBeClickable(confirmButton))
+        wait.until { _ ->
+            try {
+                driver.findElements(confirmButton).isNotEmpty() ||
+                    driver.findElements(anyDigitButton).isNotEmpty() ||
+                    driver.findElements(anyDigitButtonByRegex).isNotEmpty()
+            } catch (_: Exception) {
+                false
+            }
+        }
     }
 
     fun enterAmount(digits: List<Int>) {

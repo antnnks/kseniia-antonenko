@@ -1,6 +1,6 @@
 package io.github.antnnks.monefy.e2e.flows
 
-import com.monefy.io.github.antnnks.monefy.e2e.base.BaseE2ETest
+import io.github.antnnks.monefy.e2e.base.BaseE2ETest
 import io.github.antnnks.monefy.e2e.pages.AmountEntryPage
 import io.github.antnnks.monefy.e2e.pages.MainPage
 import org.testng.Assert
@@ -19,6 +19,7 @@ class BalanceCalculationE2ETest : BaseE2ETest() {
         home.tapIncome()
         amountPage.enterAmountAndSelectCategory(listOf(5, 0, 0))
 
+        home.ensureOnHome()
         home.tapExpense()
         amountPage.enterAmountAndSelectCategory(listOf(1, 0, 0))
 

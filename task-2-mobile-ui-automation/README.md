@@ -1,10 +1,17 @@
-# Monefy Android E2E Test Automation (Appium + Kotlin)
+## Monefy Android E2E Test Automation (Appium + Kotlin)
 
-This repository contains automated **end-to-end (E2E) tests** for the **Monefy (Lite)** Android application  
+This repository contains automated **E2E tests** for the **Monefy** Android application  
 (`com.monefy.app.lite`).
 
 The goal of this project is to validate the most important **user E2E journeys** and the **core financial logic**
 of the app using **real UI interactions** on an Android emulator.
+
+## Quick Start (after emulator + Appium are running)
+```bash
+git clone https://github.com/antnnks/kseniia-antonenko.git
+cd kseniia-antonenko
+./gradlew -p task-2-mobile-ui-automation clean test -Dappium.device=emulator-5554
+```
 
 ##  Covered E2E Flows
 
@@ -61,27 +68,36 @@ JDK 21 is recommended.
 Android SDK must be installed and ANDROID_HOME should be configured.
 Appium 2.x installed and running 
 
-# Install Appium and driver
+## Install Appium and driver
 npm install -g appium
 appium driver install uiautomator2
 
-# Start server
+## Start server
 appium
 
-# How to Run Tests
-Run the full suite from terminal:
+## How to Run Tests
+Run the full suite from terminal (from repo root):
 ./gradlew clean test
+Example with device name:
+./gradlew -p task-2-mobile-ui-automation clean test -Dappium.device=emulator-5554
 From IntelliJ IDEA:
 Set Gradle JDK to 21.
 Right-click src/test/resources/testng.xml and select Run.
+
+Recommended before running (clean app state):
+adb -s emulator-5554 shell pm clear com.monefy.app.lite
+Note: The test suite performs a best-effort `adb pm clear` before each test.
+Disable with: -Dappium.clean=false
+
+HTML test execution report is generated after a run in the [test-report directory](./test-report) and is available per [link](https://html-preview.github.io/?url=https://github.com/antnnks/kseniia-antonenko/blob/main/task-2-mobile-ui-automation/test-report/index.html) in a rendered form.
 
 ## Known Issues & Future Improvements
 
 During the development and execution of this suite, several areas for optimization were identified:
 
 ### 1. Test Isolation & Data Management
-* **Current State:** Tests currently share the application state. To ensure a "clean slate," manual data clearing is sometimes required between full suite runs.
-* **Improvement:** Implement an `@BeforeMethod` hook to clear app cache/data or use a "reset" strategy (e.g., `driver.resetApp()`) to ensure each test is fully isolated.
+* **Current State:** App state is preserved (`noReset=true`). A clean slate is achieved via manual `adb pm clear` before a full suite run.
+* **Improvement:** Add automatic data reset (e.g., `adb pm clear` in `@BeforeSuite`) once UiAutomator2 stability is improved.
 
 ### 2. Efficiency & Execution Speed
 * **Current State:** Tests are currently slower than optimal due to UI animations and explicit wait overhead.
