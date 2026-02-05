@@ -1,6 +1,6 @@
 package io.github.antnnks.monefy.e2e.flows
 
-import com.monefy.io.github.antnnks.monefy.e2e.base.BaseE2ETest
+import io.github.antnnks.monefy.e2e.base.BaseE2ETest
 import io.github.antnnks.monefy.e2e.pages.AmountEntryPage
 import io.github.antnnks.monefy.e2e.pages.HistoryPage
 import io.github.antnnks.monefy.e2e.pages.MainPage
@@ -28,11 +28,17 @@ class AddIncomeE2ETest : BaseE2ETest() {
         val homeShowsBalance = homeScreen.isBalanceVisible() || homeScreen.isIncomeButtonVisible()
         Assert.assertTrue(homeShowsBalance, "Home should show balance or income button after adding income")
 
+        homeScreen.ensureOnHome()
         historyScreen.openHistory()
         Assert.assertTrue(historyScreen.isHistoryVisible(), "History screen should be visible")
 
+        var found = historyScreen.waitForAmount(amountToFind)
+        if (!found) {
+            historyScreen.reopenHistory()
+            found = historyScreen.waitForAmount(amountToFind)
+        }
         Assert.assertTrue(
-            historyScreen.historyContainsAmount(amountToFind),
+            found,
             "History should contain amount $amountToFind after adding income"
         )
     }

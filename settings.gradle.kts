@@ -3,4 +3,3 @@ plugins {
 }
 rootProject.name = "kseniia-antonenko"
 include("task-2-mobile-ui-automation")
-include("task-3-rest-api-automation")

@@ -1,6 +1,6 @@
 package io.github.antnnks.monefy.e2e.flows
 
-import com.monefy.io.github.antnnks.monefy.e2e.base.BaseE2ETest
+import io.github.antnnks.monefy.e2e.base.BaseE2ETest
 import io.github.antnnks.monefy.e2e.pages.AmountEntryPage
 import io.github.antnnks.monefy.e2e.pages.HistoryPage
 import io.github.antnnks.monefy.e2e.pages.MainPage

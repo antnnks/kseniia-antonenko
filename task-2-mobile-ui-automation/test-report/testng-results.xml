@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-05T23:53:08 CET" name="Monefy E2E Suite" finished-at="2026-02-05T23:55:06 CET" duration-ms="118389">
+    <groups>
+      <group name="income">
+        <method signature="AddIncomeE2ETest.addIncomeAndVerifyHomeAndHistory()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest@74f6c5d8]" name="addIncomeAndVerifyHomeAndHistory" class="io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest"/>
+      </group> <!-- income -->
+      <group name="balance">
+        <method signature="BalanceCalculationE2ETest.verifyIncomeMinusExpenseBalance()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest@2dc9b0f5]" name="verifyIncomeMinusExpenseBalance" class="io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest"/>
+      </group> <!-- balance -->
+      <group name="e2e">
+        <method signature="AddExpenseE2ETest.addExpenseAndVerifyHistory()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest@102cec62]" name="addExpenseAndVerifyHistory" class="io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest"/>
+        <method signature="AddIncomeE2ETest.addIncomeAndVerifyHomeAndHistory()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest@74f6c5d8]" name="addIncomeAndVerifyHomeAndHistory" class="io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest"/>
+        <method signature="BalanceCalculationE2ETest.verifyIncomeMinusExpenseBalance()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest@2dc9b0f5]" name="verifyIncomeMinusExpenseBalance" class="io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest"/>
+      </group> <!-- e2e -->
+      <group name="expense">
+        <method signature="AddExpenseE2ETest.addExpenseAndVerifyHistory()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest@102cec62]" name="addExpenseAndVerifyHistory" class="io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest"/>
+      </group> <!-- expense -->
+    </groups>
+    <test started-at="2026-02-05T23:53:08 CET" name="E2E Flows" finished-at="2026-02-05T23:55:06 CET" duration-ms="118389">
+      <class name="io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest">
+        <test-method is-config="true" signature="testSetUp()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest@102cec62]" started-at="2026-02-05T23:53:54 CET" name="testSetUp" finished-at="2026-02-05T23:54:08 CET" duration-ms="13752" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetUp -->
+        <test-method signature="addExpenseAndVerifyHistory()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest@102cec62]" started-at="2026-02-05T23:54:08 CET" name="addExpenseAndVerifyHistory" description="E2E Flow 1: Add expense (100) and verify it appears in History" finished-at="2026-02-05T23:54:25 CET" duration-ms="16986" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addExpenseAndVerifyHistory -->
+      </class> <!-- io.github.antnnks.monefy.e2e.flows.AddExpenseE2ETest -->
+      <class name="io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest">
+        <test-method is-config="true" signature="testSetUp()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest@74f6c5d8]" started-at="2026-02-05T23:54:25 CET" name="testSetUp" finished-at="2026-02-05T23:54:38 CET" duration-ms="13344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetUp -->
+        <test-method signature="addIncomeAndVerifyHomeAndHistory()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest@74f6c5d8]" started-at="2026-02-05T23:54:38 CET" name="addIncomeAndVerifyHomeAndHistory" description="E2E Flow 2: Add income 250, verify Home and History" finished-at="2026-02-05T23:55:06 CET" duration-ms="28015" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addIncomeAndVerifyHomeAndHistory -->
+      </class> <!-- io.github.antnnks.monefy.e2e.flows.AddIncomeE2ETest -->
+      <class name="io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest">
+        <test-method is-config="true" signature="suiteSetUp()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest@2dc9b0f5]" started-at="2026-02-05T23:53:05 CET" name="suiteSetUp" finished-at="2026-02-05T23:53:08 CET" duration-ms="2606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetUp -->
+        <test-method is-config="true" signature="testSetUp()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest@2dc9b0f5]" started-at="2026-02-05T23:53:08 CET" name="testSetUp" finished-at="2026-02-05T23:53:21 CET" duration-ms="13132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetUp -->
+        <test-method signature="verifyIncomeMinusExpenseBalance()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest@2dc9b0f5]" started-at="2026-02-05T23:53:21 CET" name="verifyIncomeMinusExpenseBalance" description="E2E Flow 3: Add income (500), add expense (100), verify balance is 400" finished-at="2026-02-05T23:53:54 CET" duration-ms="33131" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIncomeMinusExpenseBalance -->
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest@2dc9b0f5]" started-at="2026-02-05T23:55:06 CET" name="suiteTearDown" finished-at="2026-02-05T23:55:06 CET" duration-ms="181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- io.github.antnnks.monefy.e2e.flows.BalanceCalculationE2ETest -->
+    </test> <!-- E2E Flows -->
+  </suite> <!-- Monefy E2E Suite -->
+</testng-results>
